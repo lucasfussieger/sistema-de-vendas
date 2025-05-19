@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Vendedor</title>
+</head>
+<body>
+    <h1>Bem-vindo, {{ session['usuario'] }}</h1>
+
+    <ul>
+        <li><a href="{{ url_for('index') }}">Ver Loja</a></li>
+        <li><a href="{{ url_for('clientes') }}">Ver Clientes</a></li>
+        <li><a href="{{ url_for('registrar_produto') }}">Registrar Produto</a></li>
+        <li><a href="{{ url_for('logout') }}">Sair</a></li>
+    </ul>
+</body>
+</html>

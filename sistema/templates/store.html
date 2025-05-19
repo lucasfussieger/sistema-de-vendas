@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Produtos</title>
+</head>
+<body>
+    <h1>Produtos disponíveis</h1>
+        {% for p in produtos %}
+            
+            <a href="/produto/{{ p.id }}">{{ p.nome }}</a> - R$ {{ "%.2f"|format(p.preco) }}
+            
+        {% endfor %}
+</body>

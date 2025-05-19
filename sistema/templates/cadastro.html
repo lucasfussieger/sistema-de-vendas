@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %} 
+    <form action="/cadastrar" method="POST">
+        <h1>CADASTRO</h1>
+        <LAbel for = 'nome'>nome de usuario:</LAbel><br>
+        <input type="text" id="nome" name="nome"><br>
+        <label for="email">endereço de email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <label for="senha">digite sua senha:</label><br>
+        <input type="text" id="senha" name="senha"><br>
+        <label for="senha_confirmacao">confirme sua senha</label><br>
+        <input type="text" id="senha_confirmacao" name="senha_confirmacao"><br>
+        <button type="submit">Enviar</button><br>
+    </form>
+</body>
+</html>
